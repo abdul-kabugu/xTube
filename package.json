@@ -1,0 +1,46 @@
+{
+  "name": "crossbell-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3737",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@crossbell/connect-kit": "0.0.59",
+    "@crossbell/indexer": "0.0.59",
+    "@crossbell/ipfs-gateway": "0.0.18",
+    "@crossbell/ipfs-react": "0.0.18",
+    "@crossbell/notification": "0.0.59",
+    "@crossbell/ui": "0.0.59",
+    "@crossbell/util-ethers": "0.0.59",
+    "@crossbell/util-hooks": "0.0.59",
+    "@crossbell/util-metadata": "0.0.59",
+    "@tanstack/react-query": "4.28.0",
+    "crossbell.js": "0.19.7",
+    "eslint": "8.38.0",
+    "eslint-config-next": "13.3.0",
+    "ethers": "5.7.2",
+    "next": "13.3.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "5.0.4",
+    "wagmi": "0.12.10"
+  },
+  "devDependencies": {
+    "@crossbell/ipfs-gateway-next": "0.0.18",
+    "@types/hast": "2.3.4",
+    "@types/lodash.compact": "3.0.7",
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.33",
+    "@types/react-dom": "18.0.11",
+    "autoprefixer": "10.4.14",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-plugin-prettier": "4.2.1",
+    "postcss": "8.4.21",
+    "prettier": "2.8.7",
+    "tailwindcss": "3.3.1"
+  }
+}
