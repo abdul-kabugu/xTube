@@ -17,6 +17,7 @@ import {
 } from "@crossbell/connect-kit";
 
 import { ipfsGateway, ipfsLinkToHttpLink } from "@/ipfs";
+import Layout from "@/components/Layout";
 
 const wagmiClient = createClient(
   getDefaultClientConfig({ appName: "Crossbell App" })
@@ -26,19 +27,27 @@ export type CommonPageProps<T = unknown> = T & {
   dehydratedState: DehydratedState;
 };
 
+// <Hydrate state={pageProps.dehydratedState}>
+// <IpfsGatewayContext.Provider value={ipfsGateway}>
+//<ConnectKitProvider ipfsLinkToHttpLink={ipfsLinkToHttpLin
+
+const queryClient = new QueryClient()
 export default function App({ Component, pageProps }: AppProps) {
-  const [queryClient] = React.useState(() => new QueryClient());
+ // const [queryClient] = React.useState(() => new QueryClient());
 
   return (
-    <QueryClientProvider client={queryClient}>
+    <QueryClientProvider  client={queryClient} >
       <Hydrate state={pageProps.dehydratedState}>
+
         <WagmiConfig client={wagmiClient}>
-          <IpfsGatewayContext.Provider value={ipfsGateway}>
-            <ConnectKitProvider ipfsLinkToHttpLink={ipfsLinkToHttpLink}>
-              <NotificationModal />
+     
+         <ConnectKitProvider>
+              <Layout>
+                <NotificationModal />
               <Component {...pageProps} />
-            </ConnectKitProvider>
-          </IpfsGatewayContext.Provider>
+              </Layout>
+              </ConnectKitProvider>
+         
         </WagmiConfig>
       </Hydrate>
     </QueryClientProvider>
