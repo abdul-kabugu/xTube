@@ -14,7 +14,7 @@ export default function Layout({children} : Tlayout) {
     <>
      <TopNav isExpanded = {isSidebarExpanded} />
      <main className='flex'>
-      <section className={`${isSidebarExpanded ? "ml-[300px]" : "ml-[100px]"}`}>{children}</section>
+      <section className={`${isSidebarExpanded ? "ml-[130px]" : "ml-[70px]"}`}>{children}</section>
        <Sidebar isExpanded = {isSidebarExpanded} toggleSidebar = {toggleSidebar} />   
      </main>
      <MobileNav  />
