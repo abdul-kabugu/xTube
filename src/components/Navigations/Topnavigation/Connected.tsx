@@ -9,26 +9,36 @@ import { profileMenuLinks } from '@/constants';
 import { AiOutlineSetting } from 'react-icons/ai';
 import {VscSignOut} from 'react-icons/vsc'
 import {useShowNotificationModal} from '@crossbell/notification'
+import { BellOutline, MoonOutline, SunOutline, UploadOutline } from '@/Icons';
+import { useTheme } from 'next-themes';
+import Link from 'next/link';
 export default function Connected() {
   const account = useConnectedAccount();
   const characterName = extractCharacterName(account?.character);
   const address = account?.type === "email" ? account.email : account?.address;
 const {show: showSettings, isActive, hide} = useXSettingsModal()
+const {theme, systemTheme, setTheme} = useTheme()
 const show = useShowNotificationModal()
+
+  const handleToggleThemes = () =>  {
+     theme  === "dark" ? setTheme("light") : setTheme("dark")
+  }
     const UserConnected = () =>  {
       return (
         <div className='flex items-center gap-2'>
-          <div className='hover:bg-gray-200 cursor-pointer h-8 w-8 flex items-center justify-center rounded-full py-0.5 px-1.5'>
-          <IoMdNotificationsOutline className='w-6 h-6  rounded-full ' onClick={show} />
+          <div className='hover:bg-gray-200 dark:hover:bg-gray-700 cursor-pointer h-8 w-8 flex items-center justify-center rounded-full py-0.5 px-1.5'>
+          <BellOutline className='w-6 h-6  rounded-full ' onClick={show} />
           </div>
+          <Link href={`/upload`}>
           <div className='flex gap-2 items-center bg-blue-700 text-white py-1.5 px-3 font-sans rounded-lg cursor-pointer'>
-            <TbVideoPlus  />
+            <TbVideoPlus />
              <button>New video</button>
           </div>
+          </Link>
            <div>
             <Menu as="div" className="relative ">
            <Menu.Button>
-         <div className='border border-gray-200 flex gap-2 py-1 px-3 items-center rounded-xl cursor-pointer '>
+         <div className='border border-gray-200 dark:border-gray-600 flex gap-2 py-1 px-3 items-center rounded-xl cursor-pointer '>
            <CharacterAvatar size="30px" character={account?.character} />
             <p title={characterName} className="font-semibold text-lg ">{characterName}</p>
          </div>
@@ -43,14 +53,14 @@ const show = useShowNotificationModal()
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         > 
-        <Menu.Items as='div' className="absolute right-0 bg-white shadow-lg border border-gray-300 rounded-lg w-[220px] px-4 py-3">
+        <Menu.Items as='div' className="absolute right-0 bg-inherit shadow-lg border border-indigo-200 dark:border-gray-700 rounded-lg w-[220px] px-4 py-3">
           {profileMenuLinks.map((link, i) =>  {
 
             return (
               <Menu.Item key={i}>
-                <div className='flex items-center gap-2 cursor-pointer text-black/75 py-2 hover:bg-gray-200 px-2 rounded-lg my-3'>
-                <link.icon className='w-3.5 h-4.5 text-black/75' />
-                  <p className='font-mono capitalize '>{link.title}</p>
+                <div className='flex items-center gap-2 cursor-pointer  py-2 hover:bg-indigo-100 dark:hover:bg-gray-700 px-2 rounded-lg my-3'>
+                <link.icon className='w-4 h-4 ' />
+                  <p className=' text-sm  capitalize '>{link.title}</p>
                    
                 </div>
               </Menu.Item>
@@ -58,17 +68,32 @@ const show = useShowNotificationModal()
           })}
 
           <Menu.Item>
-             <div className='flex items-center gap-2 cursor-pointer text-black/75 py-2 hover:bg-gray-200 px-2 rounded-lg my-3' onClick={showSettings}>
-               <AiOutlineSetting className='w-4 h-4' />
-                 <button className='font-mono capitalize '>Channel Settings</button>
+             <div className='flex items-center gap-2 cursor-pointer  py-2 hover:bg-indigo-100 dark:hover:bg-gray-700 px-2 rounded-lg my-3' onClick={showSettings}>
+               <AiOutlineSetting className='w-5 h-5' />
+                 <button className=' text-sm capitalize '>Channel Settings</button>
              </div>
+          </Menu.Item>
+          <Menu.Item>
+             
+               {theme === "dark" ?  (
+                 <div className='flex items-center gap-2 cursor-pointer  py-2 hover:bg-indigo-100 dark:hover:bg-gray-700 px-2 rounded-lg my-3' onClick={handleToggleThemes}>
+                   <SunOutline className='w-4 h-4'  />
+                    <button className='text-sm'>Swith to Light</button>
+                 </div>
+               ) : (
+                <div className='flex items-center gap-2 cursor-pointer  py-2 hover:bg-indigo-100 dark:hover:bg-gray-700 px-2 rounded-lg my-3' onClick={handleToggleThemes}>
+                  <MoonOutline className='w-4 h-4 ' />
+                   <button className='text-sm'>Switch to Dark</button>
+                </div>
+               )}
+             
           </Menu.Item>
           <Menu.Item>
           <ConnectButton>
         {(status, { connect, disconnect }) => (
-          <div className='flex items-center gap-2 cursor-pointer text-black/75 py-2 hover:bg-gray-200 px-2 rounded-lg my-3' onClick={disconnect}>
-          <VscSignOut className='w-5 h5' />
-            <button className='font-mono capitalize '>Signout</button>
+          <div className='flex items-center gap-2 cursor-pointer  py-2 hover:bg-indigo-100 dark:hover:bg-gray-700 px-2 rounded-lg my-3' onClick={disconnect}>
+          <VscSignOut className='w-5 h-5' />
+            <button className=' capitalize '>Signout</button>
         </div>
         )}
       </ConnectButton>

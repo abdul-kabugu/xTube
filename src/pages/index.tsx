@@ -8,7 +8,7 @@ import IconsAll from "@/components/IconsAll";
 
 export default function IndexPage() {
   return (
-    <div>
+    <div className="bg-red-700">
       hllow  world
       <Verified  fill="none" color="red" />
       <IconsAll  />

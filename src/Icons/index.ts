@@ -22,10 +22,11 @@ import Eklopoko from "./eklopoko";
 import HandWaveOutline from "./HandWaveOutline";
 import YppOutline from "./YppOutline";
 import Discover from "./Discover";
-
+import SunOutline from "./SunOutline";
+import MoonOutline from "./MoonOutline";
 export {
     Verified, UploadOutline,BellOutline,ChannelOutline, ChevronLeftOutline, ChevronRightOutline,
     FeedOutline,HomeOutline,ExploreOutline, AddImageOutline, CollectOutline, CopyOutline, DisconnectOutline,
     LikeOutline, DislikeOutline, CommentOutline,EmojiOutline, ExternalOutline, FireOutline,GlobeOutline,
-    Eklopoko, HandWaveOutline, YppOutline, Discover
+    Eklopoko, HandWaveOutline, YppOutline, Discover, SunOutline, MoonOutline
 }

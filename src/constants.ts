@@ -5,7 +5,7 @@ import { Verified, UploadOutline,BellOutline,ChannelOutline, ChevronLeftOutline,
 export const profileMenuLinks = [
   {
     title : "Your channel",
-    icon : TfiVideoClapper,
+    icon : ChannelOutline,
     to : "/channel"
   },
 
