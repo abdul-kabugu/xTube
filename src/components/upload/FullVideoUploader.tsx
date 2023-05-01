@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import VideoMetadata from './VideoMetadata'
 import VideoSelector from './VideoSelector'
 
 export default function FullVideoUploader() {
@@ -6,8 +7,12 @@ export default function FullVideoUploader() {
      console.log("the selected file", videoFile)
   return (
     <div className=''>
-        <h1>Full uploader</h1>
-        <VideoSelector handleSelectFile={setvideoFile} />
+        
+         {videoFile  ? (
+           <VideoMetadata videoFile = {videoFile} setVideoFile = {setvideoFile} />
+         ) : (
+          <VideoSelector handleSelectFile={setvideoFile} />
+       )}
     </div>
   )
 }

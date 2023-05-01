@@ -53,7 +53,7 @@ const show = useShowNotificationModal()
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         > 
-        <Menu.Items as='div' className="absolute right-0 bg-inherit shadow-lg border border-indigo-200 dark:border-gray-700 rounded-lg w-[220px] px-4 py-3">
+        <Menu.Items as='div' className="absolute right-0 bg-white dark:bg-gray-900 shadow-lg  border border-indigo-200 dark:border-gray-700 rounded-lg w-[220px] px-4 py-3">
           {profileMenuLinks.map((link, i) =>  {
 
             return (
