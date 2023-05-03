@@ -24,7 +24,7 @@ export default function Layout({children} : Tlayout) {
     <LivepeerConfig client={client}>
      <TopNav isExpanded = {isSidebarExpanded} />
      <main className='flex '>
-      <section className={`${isSidebarExpanded ? "ml-[120px]" : "ml-[70px]"}  w-full`}>{children}</section>
+      <section className={`${isSidebarExpanded ? "md:ml-[120px]" : "md:ml-[70px]"} xs:ml-0  w-full`}>{children}</section>
        <Sidebar isExpanded = {isSidebarExpanded} toggleSidebar = {toggleSidebar} />   
      </main>
      <MobileNav  />

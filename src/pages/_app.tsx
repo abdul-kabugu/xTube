@@ -20,7 +20,7 @@ import { ipfsGateway, ipfsLinkToHttpLink } from "@/ipfs";
 import Layout from "@/components/Layout";
 
 const wagmiClient = createClient(
-  getDefaultClientConfig({ appName: "Crossbell App" })
+  getDefaultClientConfig({ appName: "xTube App" })
 );
 
 export type CommonPageProps<T = unknown> = T & {

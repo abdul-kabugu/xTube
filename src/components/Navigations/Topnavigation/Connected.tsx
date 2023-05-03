@@ -14,6 +14,7 @@ import { useTheme } from 'next-themes';
 import Link from 'next/link';
 export default function Connected() {
   const account = useConnectedAccount();
+   
   const characterName = extractCharacterName(account?.character);
   const address = account?.type === "email" ? account.email : account?.address;
 const {show: showSettings, isActive, hide} = useXSettingsModal()
@@ -30,7 +31,7 @@ const show = useShowNotificationModal()
           <BellOutline className='w-6 h-6  rounded-full ' onClick={show} />
           </div>
           <Link href={`/upload`}>
-          <div className='flex gap-2 items-center bg-blue-700 text-white py-1.5 px-3 font-sans rounded-lg cursor-pointer'>
+          <div className='flex xs:gap-1 md:gap-2 items-center bg-blue-700 text-white xs:py-1.5 md:py-2 xs:px-2 md:px-3 font-sans rounded-lg cursor-pointer xs:hidden md:flex '>
             <TbVideoPlus />
              <button>New video</button>
           </div>
@@ -39,8 +40,8 @@ const show = useShowNotificationModal()
             <Menu as="div" className="relative ">
            <Menu.Button>
          <div className='border border-gray-200 dark:border-gray-600 flex gap-2 py-1 px-3 items-center rounded-xl cursor-pointer '>
-           <CharacterAvatar size="30px" character={account?.character} />
-            <p title={characterName} className="font-semibold text-lg ">{characterName}</p>
+           <CharacterAvatar size={30} character={account?.character} />
+            <p title={characterName} className="font-semibold text-lg xs:hidden md:block ">{characterName}</p>
          </div>
          </Menu.Button>
 

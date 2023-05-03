@@ -13,6 +13,7 @@ import { useCreateAsset } from '@livepeer/react';
 import {useContract} from '@crossbell/contract'
 import { useAccountCharacter } from "@crossbell/connect-kit";
 import { ClipLoader } from 'react-spinners'
+import { ThumbnailsLoadingSpinner } from '../spinners'
 console.log("the live peer key", LIVEPEER_KEY)
 export default function VideoMetadata({videoFile, setVideoFile}) {
     const [videoTitle, setvideoTitle] = useState("")
@@ -297,7 +298,7 @@ export default function VideoMetadata({videoFile, setVideoFile}) {
 
     
   return (
-    <div className=' h-screen flex gap-3 items-center justify-center'>
+    <div className='  flex  xs:flex-col md:flex-row gap-3 items-center justify-center'>
       
          <div className='flex-1 h-full px-4 py-2'>
              <div className='flex flex-col gap-2 mb-3'>
@@ -366,7 +367,7 @@ export default function VideoMetadata({videoFile, setVideoFile}) {
                    
                  </div>
 
-                  {isGeneratingThumbnails && <h1>loading</h1>}
+                  {isGeneratingThumbnails && <div className='flex gap-2 items-center'> <ClipLoader size={19} /> <p>Loading Thambnails</p>  </div>}
                    {videoThumbnails?.map((item, i) =>  {
 
                     return(

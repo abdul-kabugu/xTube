@@ -7,7 +7,7 @@ import { sidebarMenu } from '@/constants'
 export default function Sidebar({isExpanded, toggleSidebar}: Tsidebar) {
   return (
     
-    <div className={`${isExpanded ? "w-[120px] " : "w-[70px] "}  border-r-1 h-screen fixed top-0  duration-500 ease-in-out`}>
+    <div className={`${isExpanded ? "w-[120px] " : "w-[70px] "}  border-r-1 h-screen fixed top-0  duration-500 ease-in-out xs:hidden md:block `}>
         <div>
           {sidebarMenu.map((item, i) =>  {
 
