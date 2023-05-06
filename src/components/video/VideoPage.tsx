@@ -16,6 +16,7 @@ import { CharacterAvatar } from '@crossbell/ui'
 import useTruncateText from '@/hooks/useTruncateText'
 import { useAccountBalance } from '@crossbell/connect-kit'
 import {useContract} from '@crossbell/contract'
+import ShareButtons from './ShareButtons'
 
  type TvideoPage = {
     post : {}
@@ -273,15 +274,15 @@ const ShareModal = () =>  {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white dark:bg-gray-900 p-4 text-left align-middle shadow-xl  transition-all">
+            <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white dark:bg-gray-900 p-2 text-left align-middle shadow-xl  transition-all">
               <Dialog.Title
                 className="text-lg font-medium leading-6 "
               >
-               share modal
+              <h1 className='opacity-70'>SHARE</h1> 
               </Dialog.Title>
-              <div className="mt-4">
+              <div className="mt-3">
                 
-                share upupu
+                <ShareButtons postId={`${profileId}-${videoId}`} />
                    
               </div>
 
