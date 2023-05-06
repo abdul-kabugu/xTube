@@ -43,6 +43,42 @@ export const profileMenuLinks = [
 
  ]
 
+ export const tipsTires = [
+  {
+    title : "1 MIRA",
+     emoji : "👍",
+     amount: 1
+  },
+
+  {
+    title : "5 MIRA",
+     emoji : "🙌",
+     amount : 5
+  },
+  {
+    title : "10 MIRA",
+     emoji : "🍺",
+     amount : 10
+  },
+
+  {
+    title : "15 MIRA",
+     emoji : "🎉",
+     amount : 15
+  },
+  {
+    title : "20 MIRA",
+     emoji : "💰",
+     amount : 20
+  },
+
+  {
+    title : "30 MIRA",
+     emoji : "🏆",
+     amount : 30
+  },
+ ]
+
  export const fakeArray = [1, 2, 3, 4,5,6]
  export const fakeArray_2 = [1, 2, 3, 4,5,6,7,8,9,10, 11, 12]
 
