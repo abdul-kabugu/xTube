@@ -41,7 +41,7 @@ const duration = moment.duration(diffInHours, 'hours');
                 )}
           </div> 
             <div className='flex gap-2 ml-10  '>
-                <Link href={`channels/${post.character.characterId}`}> <p className='font-light'>{post.character.handle}</p></Link>
+                <Link href={`channel/${post.character.characterId}`}> <p className='font-light'>{post.character.handle}</p></Link>
                   <p className='font-light'>{duration.humanize().replace("a ", "")} ago</p>
             </div>
          </div>

@@ -6,7 +6,7 @@ import axios from 'axios'
 import Image from 'next/image'
 import { IPFS_GATEWAY, tipsTires } from '@/constants'
 import { Player } from '@livepeer/react'
-import { useAccountCharacter, useFollowCharacter, useMintNote, useNoteLikeCount, useUnfollowCharacter } from '@crossbell/connect-kit'
+import { useAccountCharacter, useFollowCharacter, useIsNoteLiked, useMintNote, useNoteLikeCount, useToggleLikeNote, useUnfollowCharacter } from '@crossbell/connect-kit'
 import { Indexer } from 'crossbell.js'
 import moment from 'moment'
 import { BulbOutline, CollectOutline, LikeOutline } from '@/Icons'
@@ -20,7 +20,6 @@ import {useContract} from '@crossbell/contract'
 import ShareButtons from './ShareButtons'
 import { useCharacterFollowRelation, useNoteStatus } from '@crossbell/indexer'
 import { toast } from 'react-toastify'
-
 import Link from 'next/link'
 import Comments from './Comments'
 import RelatedVideoCrad from '../cards/RelatedVideoCard'
@@ -32,7 +31,6 @@ import RelatedVideos from './RelatedVideos'
  }
 export default function VideoPage({post, videoId, profileId}:TvideoPage) {
     const indexer = new Indexer()
-      const [creatorFollowers, setcreatorFollowers] = useState()
       const [totalMints, settotalMints] = useState()
       const [isTipModal, setisTipModal] = useState(false)
       const [pointedAmount, setPointedAmount] = useState(0)
@@ -53,6 +51,7 @@ export default function VideoPage({post, videoId, profileId}:TvideoPage) {
        return axios.get(BASE_URL)
      }
      const { data : videoData, error : videoDataError, isLoading : isVideoDataLoading, isError : isVideoDataError } =  useQuery(['video'], fetchVideo )
+
  console.log("the post from it's page", videoData)
 
   /*   
@@ -60,38 +59,14 @@ export default function VideoPage({post, videoId, profileId}:TvideoPage) {
  Get creator followers
  ==========================
  */
-const getCreatorFollowers = async () =>  {
-    const {list} = await indexer.getBacklinksOfCharacter(43, {
-        linkType: 'follow',
-      })
-      setcreatorFollowers(list)
-}
-useEffect(() => {
- getCreatorFollowers()
-}, [])
-console.log("Followers", creatorFollowers)
- /*   
- =============================
+ const {data:profileStats} = useCharacterFollowStats(channelId)
+ /*=============================
  Get like status
  ===========================
 */
- const getLikeStatus = async () =>{
-  const result = await indexer.getLinks(character?.characterId, {
-    toCharacterId: profileId,
-    toNoteId: videoId,
-    linkType: 'like',
-    linkItemType: 'Note',
-  })
-  setlikeStatus(result)
-  
- }
 
-  useEffect(() => {
-     getLikeStatus()
-  }, [isVideoLiked])
-
-   const {data:lakes} = useNoteLikeCount(profileId, videoId)
-   console.log("lakes", likeStatus)
+   const [{isLiked}] = useIsNoteLiked(profileId, videoId)
+   console.log("lakes", isLiked)
 /*   
  =============================
  Get video comments
@@ -377,7 +352,7 @@ const ShareModal = () =>  {
          <p className=' font-semibold opacity-70'>Uploaded {duration.humanize().replace("a ", "")} ago</p>
              </div>
               <div className='flex gap-3 items-center '>
-                  <div className={`flex gap-2 border hover:bg-gray-200 py-0.5 px-1 items-center rounded-md cursor-pointer ${likeStatus?.count === 0 || isVideoLiked  ? "text-blue-600" : "text-gray-900 dark:text-white"} `} onClick={handleLikeVideo}>
+                  <div className={`flex gap-2 border hover:bg-gray-200 py-0.5 px-1 items-center rounded-md cursor-pointer ${isLiked|| isVideoLiked  ? "text-blue-600" : "text-gray-900 dark:text-white"} `} onClick={handleLikeVideo}>
                      <p className='text-lg'>{likeStatus?.count}</p>
                       <LikeOutline className='xs:w-4 xs:h-4 md:w-5 md:h-5' />
                       </div>
@@ -397,7 +372,7 @@ const ShareModal = () =>  {
  <CharacterAvatar  character={profileData?.data } size={60} className='xl:w-[200px]' /> 
   <div>
   <Link href={`/channel/${profileData?.data.characterId}`} className='opacity-90'>{profileData?.data.handle}</Link>
-  <p className='text-xs opacity-80'>Subscribers {creatorFollowers?.length}</p>
+  <p className='text-xs opacity-80'>Subscribers {profileStats?.followersCount}</p>
   </div>
  </div>
 <button className='bg-blue-600 py-2 px-4 rounded-lg text-white' disabled={relationStatus?.isFollowed} onClick={handleSubscribe}>{relationStatus?.isFollowed ? "Subscribed" : "Subscribe"}</button>

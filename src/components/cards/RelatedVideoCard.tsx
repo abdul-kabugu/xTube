@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { IPFS_GATEWAY } from '@/constants'
 import { useDiscover } from '@/hooks'
 import Image from 'next/image'
