@@ -6,7 +6,7 @@ import { FacebookIcon, FacebookShareButton, InstapaperShareButton, LinkedinIcon,
 import { toast, ToastContainer } from 'react-toastify';
 export default function ShareButtons({postId}) {
     const [isUrlCopied, setisUrlCopied] = useState(false)
-    const url = `https://frentube.xyz/watch/${postId}`
+    const url = `https://xtube.app/watch/${postId}`
 
 
       // handle copy url

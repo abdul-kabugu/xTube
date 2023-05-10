@@ -26,6 +26,7 @@ composer.lock
 .cache
 node_modules
 dist
+.env.local
 *.log
 /coverage
 next-env.d.ts
