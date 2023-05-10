@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { IPFS_GATEWAY } from '@/constants'
 import {useState} from 'react'
 import Image from 'next/image'
@@ -10,7 +12,7 @@ import moment from 'moment';
     post : any
  }
 
-export default function VideoCard({post} : postTypes) {
+export default function UserVideoCard({post} : postTypes) {
     const web2Url = useWeb2Url(`post?.metadata?.content?.attachments[0].name`)
      console.log("the post is here", post)
      const [currentTime, setCurrentTime] = useState(new Date());
