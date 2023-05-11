@@ -1,5 +1,4 @@
-import type { SVGProps } from 'react'
-import React from 'react'
+import type { SVGProps } from 'react';
 
 const AddImageOutline = (props: SVGProps<SVGSVGElement>) => (
   <svg

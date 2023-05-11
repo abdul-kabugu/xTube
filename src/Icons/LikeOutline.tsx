@@ -1,5 +1,5 @@
 import type { SVGProps } from 'react'
-import React from 'react'
+
 
 const LikeOutline = (props: SVGProps<SVGSVGElement>) => (
   <svg

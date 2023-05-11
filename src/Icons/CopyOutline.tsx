@@ -1,5 +1,5 @@
-import type { SVGProps } from 'react'
-import React from 'react'
+import type { SVGProps } from 'react';
+
 
 const CopyOutline = (props: SVGProps<SVGSVGElement>) => (
   <svg
