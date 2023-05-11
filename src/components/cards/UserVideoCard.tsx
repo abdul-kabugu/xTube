@@ -1,5 +1,4 @@
 // @ts-nocheck
-
 import { IPFS_GATEWAY } from "@/constants";
 import { useState } from "react";
 import Image from "next/image";

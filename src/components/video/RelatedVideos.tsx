@@ -1,5 +1,4 @@
 // @ts-nocheck
-
 import { useDiscover } from "@/hooks";
 import { useState } from "react";
 import RelatedVideoCard from "../cards/RelatedVideoCard";
