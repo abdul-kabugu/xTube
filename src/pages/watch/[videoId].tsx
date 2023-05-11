@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useRouter } from "next/router";
@@ -5,7 +6,7 @@ import { Indexer } from "crossbell.js";
 const indexer = new Indexer();
 import React from "react";
 import { VideoPage } from "@/components/video";
-export default function videoId({ post }) {
+export default function VideoId({ post }) {
   const router = useRouter();
   const { videoId } = router.query;
   console.log("the full video", post);

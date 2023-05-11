@@ -3,7 +3,7 @@ import { FeedsPage } from "@/components/feeds";
 import { useIsConnected } from "@crossbell/connect-kit";
 import React from "react";
 
-export default function feeds() {
+export default function Feeds() {
   const isConnected = useIsConnected();
   return <div>{isConnected ? <FeedsPage /> : <AuthError />}</div>;
 }

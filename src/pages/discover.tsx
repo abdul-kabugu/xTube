@@ -9,7 +9,7 @@ import {
   FireOutline,
   LikeOutline,
 } from "@/Icons";
-export default function discover() {
+export default function Discover() {
   const [tab, setTab] = useState(0);
   const getCurrentTab = () => {
     if (tab === 0) {
