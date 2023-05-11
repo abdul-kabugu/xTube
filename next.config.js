@@ -4,8 +4,8 @@ const { withIpfsGateway } = require("@crossbell/ipfs-gateway-next");
 const nextConfig = {};
 
 module.exports = {
-    images: {
-        domains: ['gateway.ipfscdn.io'],
-      },
-    //withIpfsGateway(nextConfig)
-}
+  images: {
+    domains: ["gateway.ipfscdn.io"],
+  },
+  //withIpfsGateway(nextConfig)
+};

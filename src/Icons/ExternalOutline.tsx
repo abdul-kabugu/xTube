@@ -1,5 +1,4 @@
-import type { SVGProps } from 'react';
-
+import type { SVGProps } from "react";
 
 const ExternalOutline = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -17,6 +16,6 @@ const ExternalOutline = (props: SVGProps<SVGSVGElement>) => (
       fill="currentColor"
     />
   </svg>
-)
+);
 
-export default ExternalOutline
+export default ExternalOutline;

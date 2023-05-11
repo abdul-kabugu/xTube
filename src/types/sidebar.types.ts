@@ -1,4 +1,4 @@
 export type Tsidebar = {
-    isExpanded : boolean
-    toggleSidebar?: () => void
-}
+  isExpanded: boolean;
+  toggleSidebar?: () => void;
+};

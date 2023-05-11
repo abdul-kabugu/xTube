@@ -1,4 +1,4 @@
-import type { SVGProps } from 'react'
+import type { SVGProps } from "react";
 
 const BulbOutline = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -14,6 +14,6 @@ const BulbOutline = (props: SVGProps<SVGSVGElement>) => (
       fill="currentColor"
     />
   </svg>
-)
+);
 
-export default BulbOutline
+export default BulbOutline;

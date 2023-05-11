@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function Popular() {
-  return (
-    <div>Popular</div>
-  )
+  return <div>Popular</div>;
 }

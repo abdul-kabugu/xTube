@@ -8,15 +8,10 @@ import IconsAll from "@/components/IconsAll";
 import { Home } from "@/components/home";
 
 export default function IndexPage() {
-
-   
   return (
     <div className="">
-     <Home /> 
-     <IconsAll />
+      <Home />
+      <IconsAll />
     </div>
   );
 }
-
-
-

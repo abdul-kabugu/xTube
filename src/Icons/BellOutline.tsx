@@ -1,5 +1,4 @@
-import type { SVGProps } from 'react';
-
+import type { SVGProps } from "react";
 
 const BellOutline = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -15,6 +14,6 @@ const BellOutline = (props: SVGProps<SVGSVGElement>) => (
       fill="currentColor"
     />
   </svg>
-)
+);
 
-export default BellOutline
+export default BellOutline;

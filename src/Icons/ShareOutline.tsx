@@ -1,5 +1,4 @@
-import type { SVGProps } from 'react';
-
+import type { SVGProps } from "react";
 
 const ShareOutline = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -39,6 +38,6 @@ const ShareOutline = (props: SVGProps<SVGSVGElement>) => (
       fill="currentColor"
     />
   </svg>
-)
+);
 
-export default ShareOutline
+export default ShareOutline;

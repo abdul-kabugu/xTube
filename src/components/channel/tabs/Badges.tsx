@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function Badges() {
-  return (
-    <div>Coming soon</div>
-  )
+  return <div>Coming soon</div>;
 }

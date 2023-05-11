@@ -1,15 +1,15 @@
 // @ts-nocheck
 const useTruncateText = () => {
-   const shortenTxt = (text, max) => {
-     if(text?.length  <= max){
-        return text
-     }
-     return text?.slice(0, max) + " " + "..."
-   }
+  const shortenTxt = (text, max) => {
+    if (text?.length <= max) {
+      return text;
+    }
+    return text?.slice(0, max) + " " + "...";
+  };
 
   return {
-    shortenTxt
-  }
-}
+    shortenTxt,
+  };
+};
 
-export default useTruncateText
+export default useTruncateText;

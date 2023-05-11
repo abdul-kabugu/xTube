@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function Trendings() {
-  return (
-    <div>Trendings</div>
-  )
+  return <div>Trendings</div>;
 }

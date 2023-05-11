@@ -4,7 +4,7 @@ import type { AppProps } from "next/app";
 import React from "react";
 import { WagmiConfig, createClient } from "wagmi";
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import {
   DehydratedState,
   Hydrate,
@@ -33,35 +33,32 @@ export type CommonPageProps<T = unknown> = T & {
 // <IpfsGatewayContext.Provider value={ipfsGateway}>
 //<ConnectKitProvider ipfsLinkToHttpLink={ipfsLinkToHttpLin
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 export default function App({ Component, pageProps }: AppProps) {
- // const [queryClient] = React.useState(() => new QueryClient());
+  // const [queryClient] = React.useState(() => new QueryClient());
 
   return (
-    <QueryClientProvider  client={queryClient} >
+    <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
-
         <WagmiConfig client={wagmiClient}>
-     
-         <ConnectKitProvider>
-              <Layout>
-                <NotificationModal />
+          <ConnectKitProvider>
+            <Layout>
+              <NotificationModal />
               <Component {...pageProps} />
               <ToastContainer
-position="bottom-right"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="light"
-/>
-              </Layout>
-              </ConnectKitProvider>
-         
+                position="bottom-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+              />
+            </Layout>
+          </ConnectKitProvider>
         </WagmiConfig>
       </Hydrate>
     </QueryClientProvider>

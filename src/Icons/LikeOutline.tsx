@@ -1,5 +1,4 @@
-import type { SVGProps } from 'react'
-
+import type { SVGProps } from "react";
 
 const LikeOutline = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -15,6 +14,6 @@ const LikeOutline = (props: SVGProps<SVGSVGElement>) => (
       fill="currentColor"
     />
   </svg>
-)
+);
 
-export default LikeOutline
+export default LikeOutline;

@@ -1,7 +1,6 @@
-
 import React from "react";
 
-import { CharacterAvatar, useWeb2Url,  } from "@crossbell/ui";
+import { CharacterAvatar, useWeb2Url } from "@crossbell/ui";
 import { useConnectedAccount, ConnectButton } from "@crossbell/connect-kit";
 import { extractCharacterName } from "@crossbell/util-metadata";
 
@@ -54,15 +53,17 @@ function Connection() {
           </div>
         )}
 
-<ConnectButton>
-		{(status, { connect, disconnect }) => (
-			<button onClick={status.isConnected ? disconnect : connect} className='bg-purple-500 py-2 px-4 rounded-lg'>
-				{status.isConnected ? "Disconnect" : "Connect"}
-			</button>
-		)}
-	</ConnectButton>
+        <ConnectButton>
+          {(status, { connect, disconnect }) => (
+            <button
+              onClick={status.isConnected ? disconnect : connect}
+              className="bg-purple-500 py-2 px-4 rounded-lg"
+            >
+              {status.isConnected ? "Disconnect" : "Connect"}
+            </button>
+          )}
+        </ConnectButton>
       </div>
     </div>
   );
 }
-

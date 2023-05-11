@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export default function sync() {
-  return (
-    <div>sync Youtube </div>
-  )
+  return <div>sync Youtube </div>;
 }

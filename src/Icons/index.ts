@@ -25,10 +25,33 @@ import Discover from "./Discover";
 import SunOutline from "./SunOutline";
 import MoonOutline from "./MoonOutline";
 import BulbOutline from "./BulbOutline";
-BulbOutline
+BulbOutline;
 export {
-    Verified, UploadOutline,BellOutline,ChannelOutline, ChevronLeftOutline, ChevronRightOutline,
-    FeedOutline,HomeOutline,ExploreOutline, AddImageOutline, CollectOutline, CopyOutline, DisconnectOutline,
-    LikeOutline, DislikeOutline, CommentOutline,EmojiOutline, ExternalOutline, FireOutline,GlobeOutline,
-    Eklopoko, HandWaveOutline, YppOutline, Discover, SunOutline, MoonOutline, BulbOutline
-}
+  Verified,
+  UploadOutline,
+  BellOutline,
+  ChannelOutline,
+  ChevronLeftOutline,
+  ChevronRightOutline,
+  FeedOutline,
+  HomeOutline,
+  ExploreOutline,
+  AddImageOutline,
+  CollectOutline,
+  CopyOutline,
+  DisconnectOutline,
+  LikeOutline,
+  DislikeOutline,
+  CommentOutline,
+  EmojiOutline,
+  ExternalOutline,
+  FireOutline,
+  GlobeOutline,
+  Eklopoko,
+  HandWaveOutline,
+  YppOutline,
+  Discover,
+  SunOutline,
+  MoonOutline,
+  BulbOutline,
+};

@@ -1,5 +1,4 @@
-import type { SVGProps } from 'react';
-
+import type { SVGProps } from "react";
 
 const DisconnectOutline = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -25,6 +24,6 @@ const DisconnectOutline = (props: SVGProps<SVGSVGElement>) => (
       fill="currentColor"
     />
   </svg>
-)
+);
 
-export default DisconnectOutline
+export default DisconnectOutline;

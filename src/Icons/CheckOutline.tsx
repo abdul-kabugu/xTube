@@ -1,5 +1,4 @@
-import type { SVGProps } from 'react';
-
+import type { SVGProps } from "react";
 
 const CheckOutline = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -19,6 +18,6 @@ const CheckOutline = (props: SVGProps<SVGSVGElement>) => (
       fill="currentColor"
     />
   </svg>
-)
+);
 
-export default CheckOutline
+export default CheckOutline;

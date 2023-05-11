@@ -1,5 +1,4 @@
-import type { SVGProps } from 'react';
-
+import type { SVGProps } from "react";
 
 const Discover = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -19,6 +18,6 @@ const Discover = (props: SVGProps<SVGSVGElement>) => (
       fill="currentColor"
     />
   </svg>
-)
+);
 
-export default Discover
+export default Discover;

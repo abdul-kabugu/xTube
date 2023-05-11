@@ -1,5 +1,4 @@
-import type { SVGProps } from 'react';
-
+import type { SVGProps } from "react";
 
 const EmojiOutline = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -23,6 +22,6 @@ const EmojiOutline = (props: SVGProps<SVGSVGElement>) => (
       fill="currentColor"
     />
   </svg>
-)
+);
 
-export default EmojiOutline
+export default EmojiOutline;

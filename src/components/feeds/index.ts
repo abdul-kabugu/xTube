@@ -1,3 +1,3 @@
 import FeedsPage from "./FeedsPage";
 
-export {FeedsPage}
+export { FeedsPage };
