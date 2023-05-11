@@ -18,12 +18,13 @@ import useTruncateText from '@/hooks/useTruncateText'
 import { useAccountBalance } from '@crossbell/connect-kit'
 import {useContract} from '@crossbell/contract'
 import ShareButtons from './ShareButtons'
-import { useCharacterFollowRelation, useNoteStatus } from '@crossbell/indexer'
+import { useCharacterFollowRelation, useCharacterFollowStats, useNoteStatus } from '@crossbell/indexer'
 import { toast } from 'react-toastify'
 import Link from 'next/link'
 import Comments from './Comments'
 import RelatedVideoCrad from '../cards/RelatedVideoCard'
 import RelatedVideos from './RelatedVideos'
+
  type TvideoPage = {
     post : {}
     profileId : string
@@ -59,7 +60,7 @@ export default function VideoPage({post, videoId, profileId}:TvideoPage) {
  Get creator followers
  ==========================
  */
- const {data:profileStats} = useCharacterFollowStats(channelId)
+ const {data:profileStats} = useCharacterFollowStats(profileId)
  /*=============================
  Get like status
  ===========================

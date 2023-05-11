@@ -21,7 +21,7 @@ export const profileMenuLinks = [
   {
     title : "Feed",
     icon : FeedOutline,
-    to : "/Subscriptions"
+    to : "/feeds"
   },
   {
     title : "Popular",
@@ -32,13 +32,13 @@ export const profileMenuLinks = [
   {
     title : "Discover",
     icon : Discover,
-    to : "/trending"
+    to : "/discover"
   },
 
   {
-    title : "Ypp",
+    title : "Syt",
     icon : YppOutline,
-    to : "/ypp"
+    to : "/sync"
   },
 
  ]
