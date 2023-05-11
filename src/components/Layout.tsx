@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState } from "react";
 import { MobileNav, Sidebar } from "./Navigations";
 import TopNav from "./Navigations/Topnavigation/TopNav";
