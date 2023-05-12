@@ -21,7 +21,7 @@ export default function VideoCard({ post }: postTypes) {
   const diffInHours = diffInMilliseconds / (60 * 60 * 1000);
   const duration = moment.duration(diffInHours, "hours");
   return (
-    <div className=" rounded-md shadow-sm  xs:w-full md:w-[340px]  lg:w-[316px] xl:w-[290px] flex-grow flex-shrink lg:max-w-[450px]">
+    <div className=" rounded-md shadow-sm  xs:w-full md:w-[340px]  lg:w-[316px] xl:w-[290px] flex-grow flex-shrink md:max-w-[300px]">
       <Link href={`watch/${post.character?.characterId}-${post?.noteId}`}>
         <div className="  rounded-lg ">
           <Image
@@ -45,6 +45,7 @@ export default function VideoCard({ post }: postTypes) {
             />
             </div>
           </Link>
+          <div>
           {post.metadata.content.title ? (
             <h1 className="text-xl font-semibold leading-5 ">
               {post.metadata.content.title}
@@ -54,16 +55,18 @@ export default function VideoCard({ post }: postTypes) {
               Post By {post.character?.handle}
             </h1>
           )}
-        </div>
-        <div className="flex gap-2 ml-10  ">
+        
+        <div className="flex gap-2 mt-1  ">
           <Link href={`channel/${post.character?.characterId}`}>
             {" "}
-            <p className="font-light">{post.character?.handle}</p>
+            <p className="font-light text-sm">{post.character?.metadata?.content?.name}</p>
           </Link>
-          <p className="font-light">
+          <p className="font-light text-sm">
             {duration.humanize().replace("a ", "")} ago
           </p>
         </div>
+      </div>
+      </div>
       </div>
     </div>
   );
