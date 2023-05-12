@@ -28,13 +28,13 @@ export default function RelatedVideoCard({ video }) {
       <div>
         {video?.metadata?.content.title ? (
           <Link href={`${video.character.characterId}-${video?.noteId}`}>
-            <h1 className="text-lg font-semibold">
+            <h1 className="text-lg font-semibold leading-4">
               {shortenTxt(video?.metadata?.content.title, 27)}
             </h1>
           </Link>
         ) : (
           <Link href={`${video.character.characterId}-${video?.noteId}`}>
-            <h1 className="text-lg font-semibold">
+            <h1 className="text-lg font-semibold  leading-4  ">
               {" "}
               Video By {shortenTxt(video?.character.handle, 10)}
             </h1>

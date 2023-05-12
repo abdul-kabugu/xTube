@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 // @ts-nocheck
 import { IPFS_GATEWAY } from "@/constants";
 import { useState } from "react";
@@ -20,9 +21,9 @@ export default function VideoCard({ post }: postTypes) {
   const diffInHours = diffInMilliseconds / (60 * 60 * 1000);
   const duration = moment.duration(diffInHours, "hours");
   return (
-    <div className="border border-red-600 rounded-md shadow-md  xs:w-full md:w-[340px]  lg:w-[316px] xl:w-[290px] flex-grow flex-shrink lg:max-w-[450px]">
+    <div className=" rounded-md shadow-sm  xs:w-full md:w-[340px]  lg:w-[316px] xl:w-[290px] flex-grow flex-shrink lg:max-w-[450px]">
       <Link href={`watch/${post.character?.characterId}-${post?.noteId}`}>
-        <div className="ring-2 ring-green-700 rounded-lg ">
+        <div className="  rounded-lg ">
           <Image
             src={`${IPFS_GATEWAY}/${post?.metadata?.content?.attachments[0].name}`}
             width={1200}
@@ -36,11 +37,13 @@ export default function VideoCard({ post }: postTypes) {
       <div className="mt-3 px-3">
         <div className="flex gap-2">
           <Link href={`channel/${post.character?.characterId}`}>
+            <div className="min-w-[40px]">
             <CharacterAvatar
               character={post.character}
-              size={40}
-              className="xl:w-[200px]"
+                size={40}
+               
             />
+            </div>
           </Link>
           {post.metadata.content.title ? (
             <h1 className="text-xl font-semibold leading-5 ">

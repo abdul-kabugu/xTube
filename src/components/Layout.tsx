@@ -20,8 +20,8 @@ export default function Layout({ children }: Tlayout) {
   // LIVEPEER THEME
   const livepeerTheme: ThemeConfig = {
     colors: {
-      accent: "#0891b2",
-      containerBorderColor: "rgba(0, 145, 255, 0.9)",
+      accent: "#3730a3",
+      containerBorderColor: "#3730a3",
     },
     fonts: {
       display: "Inter",
