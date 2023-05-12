@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 //@ts-nocheck
 
 import { useRef, useState, useEffect } from "react";
@@ -18,6 +19,7 @@ import { useContract } from "@crossbell/contract";
 import { useAccountCharacter } from "@crossbell/connect-kit";
 import { ClipLoader } from "react-spinners";
 import { ThumbnailsLoadingSpinner } from "../spinners";
+import { toast } from "react-toastify";
 console.log("the live peer key", LIVEPEER_KEY);
 export default function VideoMetadata({ videoFile, setVideoFile }) {
   const [videoTitle, setvideoTitle] = useState("");
@@ -242,6 +244,7 @@ export default function VideoMetadata({ videoFile, setVideoFile }) {
      =======================================
      */
   const handleCreateNote = async () => {
+    try{
     setisCreatingNote(true);
     const result = await contract.postNote(character?.characterId, {
       title: videoTitle,
@@ -257,11 +260,14 @@ export default function VideoMetadata({ videoFile, setVideoFile }) {
         },
       ],
     });
-
     console.log("the note results", result);
 
     setisNotCreated(true);
-    setisCreatingNote(false);
+      setisCreatingNote(false);
+      toast.success("post have been created")
+    } catch (error) {
+      toast.error("Something went wrong when creating post")
+    }
   };
 
   useEffect(() => {
