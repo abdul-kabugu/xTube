@@ -396,28 +396,23 @@ export default function VideoPage({ post, videoId, profileId }: TvideoPage) {
     );
   };
 
-  
   /*   
  =============================
  Display loading skeleton
  =========================
  */
- if(isVideoDataLoading || isProfileDataLoading || isVideoCommentsLoading ){
-  return(
-  <VideoFullSkeleton />
-  )
- }
+  if (isVideoDataLoading || isProfileDataLoading || isVideoCommentsLoading) {
+    return <VideoFullSkeleton />;
+  }
 
-   /*   
+  /*   
  =============================
  Display erros fetching
  =========================
  */
-if(isVideoDataError || profileDataError || isVideoCommentsError){
-  return(
-    <QueryError  />
-  )
-}
+  if (isVideoDataError || profileDataError || isVideoCommentsError) {
+    return <QueryError />;
+  }
 
   return (
     <div className="flex gap-2">

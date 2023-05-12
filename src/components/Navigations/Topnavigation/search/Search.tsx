@@ -65,7 +65,7 @@ export default function Search() {
    }
   return (
     <div className="relative">
-    <div className="flex items-center gap-2 border border-gray-300 rounded-lg px-3 py-2  xl:w-[350px] xs:hidden md:flex ">
+    <div className="flex items-center gap-2 border border-gray-300 rounded-lg px-3 py-2  xl:w-[390px] xs:hidden md:flex ">
       <input
         value={searchQuery}
         onChange={(e) => setsearchQuery(e.target.value)}

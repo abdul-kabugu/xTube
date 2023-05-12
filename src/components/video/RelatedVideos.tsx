@@ -14,17 +14,13 @@ export default function RelatedVideos() {
     tags: [],
   });
   if (isError) {
-    return(
-      <QueryError  />
-    )
+    return <QueryError />;
   }
 
   console.log("the data", data);
 
   if (isLoading) {
-    return (
-      <RelatedVideoLosderSkelton  />
-    )
+    return <RelatedVideoLosderSkelton />;
   }
   return (
     <div className="xs:hidden xl:flex flex-col ">
