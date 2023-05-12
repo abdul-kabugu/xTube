@@ -2,6 +2,8 @@
 import { useDiscover } from "@/hooks";
 import { useState } from "react";
 import RelatedVideoCard from "../cards/RelatedVideoCard";
+import { RelatedVideoLosderSkelton } from "../spinners";
+import { QueryError } from "../ErrorPages";
 export default function RelatedVideos() {
   const [testTruth, settestTruth] = useState(true);
   const { data, isLoading, isFetching, error, isError } = useDiscover({
@@ -12,13 +14,17 @@ export default function RelatedVideos() {
     tags: [],
   });
   if (isError) {
-    return <h1>Something went wrong</h1>;
+    return(
+      <QueryError  />
+    )
   }
 
   console.log("the data", data);
 
   if (isLoading) {
-    return <div className="">loading</div>;
+    return (
+      <RelatedVideoLosderSkelton  />
+    )
   }
   return (
     <div className="xs:hidden xl:flex flex-col ">

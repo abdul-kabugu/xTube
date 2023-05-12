@@ -1,6 +1,6 @@
 import React from "react";
 import Connected from "./Connected";
-import Search from "./Search";
+import Search from "./search/Search";
 import { Tsidebar } from "@/types";
 export default function TopNav({ isExpanded }: Tsidebar) {
   return (

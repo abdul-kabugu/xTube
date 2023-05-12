@@ -1,2 +1,3 @@
 import AuthError from "./AuthError";
-export { AuthError };
+import QueryError from "./QueryError";
+export { AuthError, QueryError };

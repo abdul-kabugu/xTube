@@ -42,6 +42,8 @@ import Link from "next/link";
 import Comments from "./Comments";
 import RelatedVideoCrad from "../cards/RelatedVideoCard";
 import RelatedVideos from "./RelatedVideos";
+import { VideoFullSkeleton } from "../spinners";
+import { QueryError } from "../ErrorPages";
 
 type TvideoPage = {
   post: {};
@@ -393,6 +395,30 @@ export default function VideoPage({ post, videoId, profileId }: TvideoPage) {
       </Transition>
     );
   };
+
+  
+  /*   
+ =============================
+ Display loading skeleton
+ =========================
+ */
+ if(isVideoDataLoading || isProfileDataLoading || isVideoCommentsLoading ){
+  return(
+  <VideoFullSkeleton />
+  )
+ }
+
+   /*   
+ =============================
+ Display erros fetching
+ =========================
+ */
+if(isVideoDataError || profileDataError || isVideoCommentsError){
+  return(
+    <QueryError  />
+  )
+}
+
   return (
     <div className="flex gap-2">
       <div className="w-full xl:w-[73vw]">
