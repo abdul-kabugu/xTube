@@ -3,4 +3,11 @@
 
 xTube is an open source, decentralized video sharing platform built on Crossbell. It allows users to own their content and their social graph, which means that their connections are composable and can be taken to any application built on Crossbell.
 
+#Features
+Decentralized video sharing
+Ownership of content and social graph
+Composable connections
+Built on Crossbell
+
+
 
