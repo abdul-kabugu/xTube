@@ -1,11 +1,12 @@
 /* eslint-disable prettier/prettier */
 import React from "react";
 import Head from "next/head";
-export default function sync() {
+import SyncVideos from "@/components/sync/SyncVideos";
+export default function Sync() {
   return (
     <div>
     <Head>
-        <title>Feeds</title>
+        <title>Sync videos</title>
         <meta
           name="description"
           content="xTube - Decentralized video-sharing platform "
@@ -40,7 +41,9 @@ export default function sync() {
           key="ogdesc"
         />
       </Head>
-      <div>sync Youtube</div>
+      <div>
+        <SyncVideos   />
+      </div>
     </div>
   )
 }

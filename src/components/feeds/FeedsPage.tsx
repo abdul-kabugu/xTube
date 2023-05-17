@@ -12,7 +12,7 @@ export default function FeedsPage() {
         className="w-[150px] "
       />
       <h1 className="text-2xl font-bold">Your Timeline is Empty</h1>
-      <p className="text-lg font-semibold">Follow More creatores</p>
+      <p className="text-lg font-semibold">Subscribe to  More creatores</p>
     </div>
   );
 }

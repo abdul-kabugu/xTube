@@ -6,6 +6,7 @@ import Image from "next/image";
 import { CharacterAvatar, useWeb2Url } from "@crossbell/ui";
 import Link from "next/link";
 import moment from "moment";
+import useTruncateText from "@/hooks/useTruncateText";
 
 type postTypes = {
   post: any;
@@ -19,9 +20,10 @@ export default function VideoCard({ post }: postTypes) {
   const videoCreatedAt = new Date(post?.createdAt);
   const diffInMilliseconds = currentDate - videoCreatedAt;
   const diffInHours = diffInMilliseconds / (60 * 60 * 1000);
+  const {shortenTxt} = useTruncateText()
   const duration = moment.duration(diffInHours, "hours");
   return (
-    <div className=" rounded-md shadow-sm  xs:w-full md:w-[340px]  lg:w-[316px] xl:w-[290px] flex-grow flex-shrink md:max-w-[300px]">
+    <div className=" rounded-md shadow-sm mb-4 xs:w-full md:w-[340px]  lg:w-[316px] xl:w-[290px] flex-grow flex-shrink md:max-w-[320px]">
       <Link href={`watch/${post.character?.characterId}-${post?.noteId}`}>
         <div className="  rounded-lg ">
           <Image
@@ -47,12 +49,12 @@ export default function VideoCard({ post }: postTypes) {
           </Link>
           <div>
           {post.metadata.content.title ? (
-            <h1 className="text-xl font-semibold leading-5 ">
-              {post.metadata.content.title}
+            <h1 className="text-lg font-semibold leading-5 ">
+              { shortenTxt(post.metadata.content.title, 35) }
             </h1>
           ) : (
-            <h1 className="text-xl font-semibold leading-5 ">
-              Post By {post.character?.handle}
+            <h1 className="text-lg font-semibold leading-5 ">
+              Post By {shortenTxt(post.character?.handle, 35) }
             </h1>
           )}
         
